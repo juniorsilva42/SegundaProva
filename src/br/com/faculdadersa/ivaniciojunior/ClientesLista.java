@@ -18,7 +18,28 @@ public class ClientesLista {
         clientes.setNome(nome);
         clientes.setCpf(cpf);
         clientes.setData(dataAtual);
+
+        lista.add(clientes);
     }
 
+    public String toString (){
 
+        StringBuilder s = new StringBuilder();
+
+        int i = 0;
+
+        while (i < lista.size()){
+            s.append("Nome: "+lista.get(i).getNome());
+            s.append("\n");
+
+            s.append("CPF: "+lista.get(i).getCpf());
+            s.append("\n");
+
+            s.append("Data de inclusão "+lista.get(i).getData());
+            s.append("\n\n");
+            i++;
+        }
+
+        return s.toString();
+    }
 }
