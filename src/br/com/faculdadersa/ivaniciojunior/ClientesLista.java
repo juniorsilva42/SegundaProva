@@ -7,6 +7,7 @@ import java.util.LinkedList;
 public class ClientesLista {
 
     private static LinkedList<ClientesEstrutura> lista = new LinkedList<ClientesEstrutura>();
+    private static LinkedList<ClientesEstrutura> listaReincidentes = new LinkedList<ClientesEstrutura>();
 
     public void adicionaCliente (String nome, String cpf){
 
@@ -32,6 +33,7 @@ public class ClientesLista {
 
         for (int i = 0; i < lista.size(); i++){
             if (lista.get(i).getCpf().equals(cpf)){
+                listaReincidentes.add(lista.get(i));
                 lista.remove(i);
                 retorno = true;
                 break;
@@ -73,6 +75,24 @@ public class ClientesLista {
             }
         }
         return estado;
+    }
+
+    public void verificaReincidentes (String cpf){
+
+        boolean estado = false;
+        int indice = 0;
+
+        for (int i = 0; i < listaReincidentes.size(); i++){
+            if (listaReincidentes.get(i).getCpf().equals(cpf)){
+                estado = true;
+                indice = i;
+                break;
+            }
+        }
+
+        if (estado){
+            System.out.println("O cliente "+listaReincidentes.get(indice).getNome()+" já esteve anteriormente na lista de proteção ao crédito, portanto, o seu CPF de número "+listaReincidentes.get(indice).getCpf()+" será cancelado!");
+        }
     }
 
     public String toString (){

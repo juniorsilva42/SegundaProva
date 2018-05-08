@@ -6,6 +6,7 @@ public class ClientesListaTeste {
         ClientesLista clientes = new ClientesLista();
 
         System.out.println("Lista de clientes no Sistema de proteção ao crédito:");
+        System.out.println("---------------------------------------------------------------\n");
 
         clientes.adicionaCliente("Ivanicio Jr", "07380242369");
         clientes.adicionaCliente("Lara Rodrigues", "123123123123");
@@ -13,7 +14,14 @@ public class ClientesListaTeste {
 
         System.out.println(clientes.toString());
 
-        clientes.pesquisarCliente("07380242369");
+        if (clientes.removerCliente("07380242369"))
+            System.out.println("Cliente removido com sucesso!");
+
+        clientes.adicionaCliente("Ivanicio Jr", "07380242369");
+
+        clientes.verificaReincidentes("07380242369");
+
+
     }
 
 }
