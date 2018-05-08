@@ -14,14 +14,12 @@ public class ClientesListaTeste {
 
         System.out.println(clientes.toString());
 
-        if (clientes.removerCliente("07380242369"))
+        if (clientes.removerCliente("123123123123"))
             System.out.println("Cliente removido com sucesso!");
 
-        clientes.adicionaCliente("Ivanicio Jr", "07380242369");
+        clientes.adicionaCliente("Lara Rodrigues", "123123123123");
 
-        clientes.verificaReincidentes("07380242369");
-
-
+        clientes.verificaReincidentes("123123123123");
     }
 
 }
