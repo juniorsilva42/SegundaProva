@@ -9,13 +9,8 @@ public class ClientesListaTeste {
         clientes.adicionaCliente("Lara Rodrigues", "123123123123");
         clientes.adicionaCliente("Fulano de Tal", "321321321321");
 
-        System.out.println(clientes.toString());
-
-        if (clientes.removerCliente("07380242369")){
-            System.out.println("Cliente removido com sucesso");
-        }
+        clientes.adicionaCliente("asdasda", "45456456456");
 
         System.out.println(clientes.toString());
-
     }
 }
