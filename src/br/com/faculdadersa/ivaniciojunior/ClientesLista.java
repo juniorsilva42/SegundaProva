@@ -17,7 +17,7 @@ public class ClientesLista {
 
         // Verifica a existência do cliente na lista com base no CPF.
         if (verificaExistenciaCliente(cpf))
-            System.out.println("\nO cliente "+nome+" já existe na lista de proteção ao crédito.\n");
+            System.out.println("O cliente "+nome+" já existe na lista de proteção ao crédito.");
         else {
             clientes.setNome(nome);
             clientes.setCpf(cpf);
@@ -54,6 +54,8 @@ public class ClientesLista {
         }
 
         if (encontrado) {
+            System.out.println("\nCliente encontrado:");
+            System.out.println("---------------------------------------------");
             System.out.println("Nome: " + lista.get(indice).getNome());
             System.out.println("CPF: " + lista.get(indice).getCpf());
             System.out.println("Data de inclusão: " + lista.get(indice).getData());
