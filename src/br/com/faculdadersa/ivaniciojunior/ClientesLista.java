@@ -22,6 +22,21 @@ public class ClientesLista {
         lista.add(clientes);
     }
 
+    public boolean removerCliente (String cpf){
+
+        ClientesEstrutura clientes = new ClientesEstrutura();
+        boolean retorno = false;
+
+        for (int i = 0; i < lista.size(); i++){
+            if (lista.get(i).getCpf().equalsIgnoreCase(cpf)){
+                lista.remove(i);
+                retorno = true;
+                break;
+            }
+        }
+        return retorno;
+    }
+
     public String toString (){
 
         StringBuilder s = new StringBuilder();
